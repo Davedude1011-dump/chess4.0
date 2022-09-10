@@ -1,4 +1,13 @@
+var gameOn = false
+
 function gameStart() {
+    var num = 1
+    while (num <= 64) {
+        document.getElementById(num).className = ""
+        document.getElementById(num).classList.add("blank");
+        num ++
+    }
+
     document.getElementById(1).classList.remove("blank");
     document.getElementById(2).classList.remove("blank");;
     document.getElementById(3).classList.remove("blank");;
@@ -64,4 +73,15 @@ function gameStart() {
     document.getElementById(62).classList.add("blackBishop");
     document.getElementById(63).classList.add("blackKnight");
     document.getElementById(64).classList.add("blackRook");
+
+    if (gameOn === true) {
+        gameOn = false
+    }
+    else {
+        gameOn = true
+    }
+
+    if (gameOn === true) {
+        document.querySelector(".centerText").textContent = "restart"
+    }
 }
